@@ -10,6 +10,9 @@ kotlin {
         val androidMain by getting {
             dependencies {
                 implementation(project(":shared"))
+
+                implementation("io.insert-koin:koin-core:3.2.0")
+                implementation("io.insert-koin:koin-android:3.2.0")
             }
         }
     }
@@ -22,11 +25,11 @@ android {
     sourceSets["main"].manifest.srcFile("src/androidMain/AndroidManifest.xml")
 
     defaultConfig {
-        applicationId = "com.myapplication.MyApplication"
+        applicationId = "com.fitfull.android"
         minSdk = (findProperty("android.minSdk") as String).toInt()
         targetSdk = (findProperty("android.targetSdk") as String).toInt()
         versionCode = 1
-        versionName = "1.0"
+        versionName = "0.1"
     }
     compileOptions {
         sourceCompatibility = JavaVersion.VERSION_11
